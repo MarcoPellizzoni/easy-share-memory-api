@@ -28,6 +28,11 @@ option( BUILD_SHARED_LIBS "Build shared libraries" ON )
 option( BUILD_TESTS "Build tests" ON)
 option( BUILD_EXAMPLES "Build examples" OFF)
 
+if(BUILD_TESTS)
+    enable_testing()
+    configure_file(CTestCustom.cmake ${CMAKE_BINARY_DIR}/CTestCustom.cmake COPYONLY)
+endif()
+
 set(MSHM_LIB_NAME mShm)
 add_subdirectory( mShm )
 

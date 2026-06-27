@@ -24,7 +24,12 @@ PUBLIC
 
 # Permette a VS Code o altri IDE di scoprire i test automaticamente
 include(GoogleTest)
-gtest_discover_tests(unit_tests)
+gtest_discover_tests(unit_tests
+    PROPERTIES
+        TIMEOUT 30
+        LABELS  "unit"
+    DISCOVERY_TIMEOUT 60
+)
 
 
 
