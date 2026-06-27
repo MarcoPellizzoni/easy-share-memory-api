@@ -54,6 +54,7 @@ install(TARGETS ${MSHM_LIB_NAME})
 
 
 if(BUILD_TESTS)
+    enable_testing()
 	add_subdirectory(tests)
 endif()
 
